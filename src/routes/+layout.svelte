@@ -6,6 +6,18 @@
 	import { page } from '$app/stores';
 
 	$: weekNumber = $page.data.weekNumber;
+
+	import { onMount } from 'svelte';
+	import { goto } from '$app/navigation';
+	import { getCurrentWeekNumber } from '$lib/functions';
+
+	const date = new Date();
+	const currentWeekNumber = getCurrentWeekNumber(date);
+
+
+	onMount(() => {
+		goto(`/${currentWeekNumber}`);
+	});
 </script>
 
 <!-- html -->
