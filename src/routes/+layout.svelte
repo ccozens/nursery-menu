@@ -1,15 +1,20 @@
 <!-- script -->
 <script lang="ts">
 	import '../app.postcss';
-	import type { LayoutData } from './$types';
 	import { isVegetarian } from '$lib/stores';
-	import { MainGrid, MainGridHeading } from '$lib/components';
+	import { MainGrid } from '$lib/components';
+	import { page } from '$app/stores';
+
+	$: weekNumber = $page.data.weekNumber;
 </script>
 
 <!-- html -->
 
 <div class="wrapper">
-	<header>Nursery menu</header>
+	<header>
+		<h1>Nursery menu</h1>
+		<div>Week: {weekNumber}</div>
+	</header>
 	<main>
 		<button on:click={() => ($isVegetarian = !$isVegetarian)}
 			>{$isVegetarian ? 'Show Meat' : 'Show Vegetarian'}
@@ -39,6 +44,7 @@
 		grid-area: header;
 		background-color: #76ec8a;
 		text-align: center;
+		display: flex;
 	}
 
 	main {

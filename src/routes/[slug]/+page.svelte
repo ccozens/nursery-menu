@@ -3,7 +3,6 @@
 	import { MainGridHeading, Day } from '$lib/components';
 
 	export let data;
-
 	const meals = data.meals;
 	const mealsWithDay = [{ name: 'day', start_time: '', end_time: '' }, ...meals];
 
