@@ -4,7 +4,6 @@
 	import type { LayoutData } from './$types';
 	import { isVegetarian } from '$lib/stores';
 	import { MainGrid, MainGridHeading } from '$lib/components';
-	export let data: LayoutData;
 </script>
 
 <!-- html -->
@@ -13,8 +12,8 @@
 	<header>Nursery menu</header>
 	<main>
 		<button on:click={() => ($isVegetarian = !$isVegetarian)}
-			>{$isVegetarian ? 'Show Meat' : 'Show Vegetarian'}</button
-		>
+			>{$isVegetarian ? 'Show Meat' : 'Show Vegetarian'}
+		</button>
 		<MainGrid>
 			<slot />
 		</MainGrid>
