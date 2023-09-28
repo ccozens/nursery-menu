@@ -3,16 +3,9 @@
 	import '../app.postcss';
 	import { isVegetarian } from '$lib/stores';
 	import { MainGrid } from '$lib/components';
-	import { getCurrentWeekNumber } from '$lib/functions';
-	import { onMount } from 'svelte';
-	import { goto } from '$app/navigation';
+	import { page } from '$app/stores';
 
-	const date = new Date();
-	const currentWeekNumber = getCurrentWeekNumber(date);
-
-	onMount(() => {
-		goto(`/${currentWeekNumber}`);
-	});
+	$: currentWeekNumber = $page.params.slug;
 </script>
 
 <!-- html -->

@@ -1,3 +1,6 @@
-import { writable } from 'svelte/store';
+import { readable, derived } from 'svelte/store';
+import { getCurrentWeekNumber } from '$lib/functions';
 
-export const weekNumber = writable(0);
+export const date = readable(new Date());
+
+export const currentWeekNumber = derived(date, $date => getCurrentWeekNumber($date));
