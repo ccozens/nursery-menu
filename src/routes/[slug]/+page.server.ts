@@ -1,9 +1,7 @@
-import { convertRouteToWeekNumber, getByWeek } from '$lib/functions';
+import { getByWeek } from '$lib/functions';
 export async function load({ params }) {
-	const slug = params.slug;
+	const slug = Number(params.slug);
+	const response = await getByWeek(slug);
 
-	const weekNumber = await convertRouteToWeekNumber(slug);
-	const response = await getByWeek(weekNumber);
-
-	return { weekNumber, food: response };
+	return { food: response };
 }
