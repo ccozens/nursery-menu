@@ -1,0 +1,66 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model foods {
+  id         BigInt       @id(map: "meals_pkey") @default(autoincrement())
+  vegetarian Boolean?     @default(true)
+  pudding    Boolean?     @default(false)
+  food       String
+  day        Day[]        @default([Monday])
+  meal       Meal[]       @default([Breakfast])
+  meal_foods meal_foods[]
+  weeks      weeks[]      @relation("foods_weeks")
+  meal_times meals[]      @relation("meals_foods")
+}
+
+model meals {
+  id         BigInt       @id @default(autoincrement())
+  name       String
+  start_time String       @db.VarChar(4)
+  end_time   String?      @db.VarChar(4)
+  meal_foods meal_foods[]
+  foods      foods[]      @relation("meals_foods")
+
+  @@map("meal times")
+}
+
+model weeks {
+  id          BigInt  @id @default(autoincrement())
+  week_number Int     @db.SmallInt
+  foods       foods[] @relation("foods_weeks")
+}
+
+model meal_foods {
+  id      BigInt @id @default(autoincrement())
+  meal_id BigInt
+  food_id BigInt
+  foods   foods  @relation(fields: [food_id], references: [id])
+  meals   meals  @relation(fields: [meal_id], references: [id])
+
+  @@unique([meal_id, food_id])
+  @@index([food_id])
+  @@index([meal_id])
+}
+
+enum Day {
+  Monday
+  Tuesday
+  Wednesday
+  Thursday
+  Friday
+}
+
+enum Meal {
+  Breakfast
+  Snack1
+  Lunch
+  Snack2
+  Tea
+}
