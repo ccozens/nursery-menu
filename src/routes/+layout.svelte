@@ -3,14 +3,16 @@
 	import '../app.postcss';
 	import { isVegetarian } from '$lib/stores';
 	import { MainGrid } from '$lib/components';
-	import { currentWeekNumber } from '$lib/stores';
+	import { page } from '$app/stores';
+
+	const slug = $page.params.slug;
 </script>
 
 <!-- html -->
 
 <div class="wrapper">
 	<header>
-		<h1>Nursery menu for week: {$currentWeekNumber}</h1>
+		<h1>Nursery menu for week: {slug}</h1>
 	</header>
 	<main>
 		<button on:click={() => ($isVegetarian = !$isVegetarian)}
