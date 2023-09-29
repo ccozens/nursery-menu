@@ -2,9 +2,8 @@
 <script lang="ts">
 	import '../app.postcss';
 	import { isVegetarian } from '$lib/stores';
-	import { MainGrid } from '$lib/components';
+	import { MainGrid, Nav } from '$lib/components';
 	import { page } from '$app/stores';
-
 	const slug = $page.params.slug;
 </script>
 
@@ -12,7 +11,8 @@
 
 <div class="wrapper">
 	<header>
-		<h1>Nursery menu for week: {slug}</h1>
+		<h1>Nursery menu: week {slug}</h1>
+		<Nav />
 	</header>
 	<main>
 		<button on:click={() => ($isVegetarian = !$isVegetarian)}
@@ -40,6 +40,7 @@
 	}
 
 	header {
+		display: flex;
 		grid-area: header;
 		text-align: center;
 		background-color: black;
