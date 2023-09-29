@@ -10,8 +10,7 @@
 
 <div class="wrapper">
 	<header>
-		<h1>Nursery menu</h1>
-		<div>Week: {$currentWeekNumber}</div>
+		<h1>Nursery menu for week: {$currentWeekNumber}</h1>
 	</header>
 	<main>
 		<button on:click={() => ($isVegetarian = !$isVegetarian)}
@@ -40,9 +39,19 @@
 
 	header {
 		grid-area: header;
-		background-color: #76ec8a;
 		text-align: center;
-		display: flex;
+		background-color: black;
+		h1 {
+			background: linear-gradient(
+				90deg in oklch longer hue,
+				oklch(80% 0.3 34) 0%,
+				oklch(90% 0.3 200) 50%,
+				oklch(80% 0.3 316) 100%
+			);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			stroke: 1px white;
+		}
 	}
 
 	main {
