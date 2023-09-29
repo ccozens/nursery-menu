@@ -49,7 +49,7 @@
 
 	main {
 		grid-area: main;
-		background-color: #d4dfff;
+		background-color: #2459f6;
 		text-align: center;
 		overflow: auto;
 	}

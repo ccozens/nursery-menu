@@ -27,7 +27,7 @@
 
 <!-- html -->
 {#each dayMenu as item}
-	<div>
+	<div class="meal">
 		{#each item as food}
 			{#if !food.pudding}
 				<p>{food.food}</p>
@@ -42,5 +42,9 @@
 <style lang="postcss">
 	p::first-letter {
 		text-transform: capitalize;
+	}
+
+	.meal {
+		border: 1px solid #e2e8f8;
 	}
 </style>
