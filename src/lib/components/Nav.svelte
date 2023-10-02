@@ -4,7 +4,7 @@
 	import { slide, fade } from 'svelte/transition';
 
 	const pages = [
-		{ name: 'Current', path: `/${$currentWeekNumber}` },
+		{ name: 'Current menu', path: `/${$currentWeekNumber}` },
 		{ name: 'Week 1', path: '/1' },
 		{ name: 'Week 2', path: '/2' },
 		{ name: 'Week 3', path: '/3' },
@@ -18,22 +18,18 @@
 
 <!-- html -->
 
-<button
-	on:click={() => (navOpen = !navOpen)}
-	popovertarget={popover_id}
->
+<button on:click={() => (navOpen = !navOpen)} popovertarget={popover_id}>
 	{#if navOpen}
 		<DownArrow />
+		<nav popover id={popover_id}>
+			{#each pages as { name, path }}
+				<a href={path}>{name}</a>
+			{/each}
+		</nav>
 	{:else}
 		<Hamburger />
 	{/if}
 </button>
-
-<nav popover id={popover_id} class={navOpen ? 'mainNav' : ''}>
-	{#each pages as { name, path }}
-		<a href={path}>{name}</a>
-	{/each}
-</nav>
 
 <style>
 	button {
@@ -41,20 +37,19 @@
 		border: none;
 	}
 
-	.mainNav {
+	[popover] {
 		background-color: palegoldenrod;
+		padding: 10px;
+		width: var(--nav-width);
+		inset: var(--header-height) 0 auto calc(100vw-var(--nav-width));
 		display: flex;
 		flex-direction: column;
-		padding: 10px;
-        width: 50vw;
-        inset: var(--header-height) var(--nav-width);
-        border: solid green 3px;
 		& a {
-			font-size: 3em;
+			font-size: 2em;
 		}
 	}
 
-	.mainNav::backdrop {
+	[popover]::backdrop {
 		background-color: oklch(0% 0 0 / 0.5);
 	}
 </style>
