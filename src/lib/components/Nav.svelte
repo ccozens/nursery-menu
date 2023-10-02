@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { currentWeekNumber } from '$lib/stores';
 	import { DownArrow, Hamburger } from '$lib/images';
-	import { anchor } from '$lib/actions';
 	import { slide, fade } from 'svelte/transition';
 
 	const pages = [
