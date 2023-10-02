@@ -18,14 +18,14 @@
 
 <!-- html -->
 
-<button on:click={() => (navOpen = !navOpen)} popovertarget={popover_id}>
+<button on:click={() => (navOpen = !navOpen)}>
 	{#if navOpen}
 		<DownArrow />
-		<nav popover id={popover_id}>
+		<dialog>
 			{#each pages as { name, path }}
 				<a href={path}>{name}</a>
 			{/each}
-		</nav>
+		</dialog>
 	{:else}
 		<Hamburger />
 	{/if}
@@ -37,13 +37,14 @@
 		border: none;
 	}
 
-	[popover] {
+	dialog {
 		background-color: palegoldenrod;
 		padding: 10px;
 		width: var(--nav-width);
 		inset: var(--header-height) 0 auto calc(100vw-var(--nav-width));
 		display: flex;
 		flex-direction: column;
+        transition: 0.3s ease-in-out;
 		& a {
 			font-size: 2em;
 		}
