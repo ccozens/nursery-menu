@@ -12,7 +12,7 @@
 <div class="wrapper">
 	<header>
 		<h1>Nursery menu: week {slug}</h1>
-		<Nav />
+		<Nav popover_id="mainNav"/>
 	</header>
 	<main>
 		<button on:click={() => ($isVegetarian = !$isVegetarian)}
