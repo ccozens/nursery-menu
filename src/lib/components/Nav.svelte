@@ -21,7 +21,7 @@
 <button on:click={() => (navOpen = !navOpen)}>
 	{#if navOpen}
 		<DownArrow />
-		<dialog>
+		<dialog transition:slide>
 			{#each pages as { name, path }}
 				<a href={path}>{name}</a>
 			{/each}
@@ -49,6 +49,7 @@
 			font-size: 2em;
 		}
 	}
+
 
 	[popover]::backdrop {
 		background-color: oklch(0% 0 0 / 0.5);
