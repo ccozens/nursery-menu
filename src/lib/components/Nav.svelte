@@ -13,21 +13,20 @@
 	];
 
 	$: navOpen = false;
-	export let popover_id: string;
 </script>
 
 <!-- html -->
 
 <button on:click={() => (navOpen = !navOpen)}>
 	{#if navOpen}
-		<DownArrow />
-		<dialog transition:slide>
-			{#each pages as { name, path }}
-				<a href={path}>{name}</a>
-			{/each}
-		</dialog>
+			<DownArrow />
+			<dialog in:slide>
+				{#each pages as { name, path }}
+					<a href={path}>{name}</a>
+				{/each}
+			</dialog>
 	{:else}
-		<Hamburger />
+			<Hamburger />
 	{/if}
 </button>
 
@@ -35,7 +34,8 @@
 	button {
 		background: none;
 		border: none;
-	}
+        margin-left: auto;
+    }
 
 	dialog {
 		background-color: palegoldenrod;
@@ -44,14 +44,13 @@
 		inset: var(--header-height) 0 auto calc(100vw-var(--nav-width));
 		display: flex;
 		flex-direction: column;
-        transition: 0.3s ease-in-out;
+
 		& a {
 			font-size: 2em;
 		}
 	}
 
-
-	[popover]::backdrop {
+	dialog::backdrop {
 		background-color: oklch(0% 0 0 / 0.5);
 	}
 </style>

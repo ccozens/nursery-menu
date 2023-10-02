@@ -12,7 +12,7 @@
 <div class="wrapper">
 	<header>
 		<h1>Nursery menu: week {slug}</h1>
-		<Nav popover_id="mainNav"/>
+		<Nav />
 	</header>
 	<main>
 		<button on:click={() => ($isVegetarian = !$isVegetarian)}
@@ -23,9 +23,7 @@
 		</MainGrid>
 	</main>
 
-	<footer>
-		<p>hi</p>
-	</footer>
+
 </div>
 
 <style lang="postcss">
@@ -41,10 +39,13 @@
 
 	header {
 		display: flex;
+		justify-content: center;
+		align-items: center;
 		grid-area: header;
-		text-align: center;
 		background-color: black;
 		h1 {
+			width: 100%;
+			text-align: center;
 			background: linear-gradient(
 				90deg in oklch longer hue,
 				oklch(80% 0.3 34) 0%,
