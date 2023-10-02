@@ -48,7 +48,7 @@
 		flex-direction: column;
 		padding: 10px;
         width: 50vw;
-        inset: 5vh 50vw;
+        inset: var(--header-height) var(--nav-width);
         border: solid green 3px;
 		& a {
 			font-size: 3em;

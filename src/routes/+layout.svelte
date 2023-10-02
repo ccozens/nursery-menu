@@ -32,7 +32,7 @@
 	.wrapper {
 		display: grid;
 		max-height: 100vh;
-		grid-template-rows: 5vh 6fr 5vh;
+		grid-template-rows: var(--header-height) 6fr 5vh;
 		grid-template-areas:
 			'header'
 			'main'
