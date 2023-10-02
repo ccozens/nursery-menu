@@ -19,14 +19,14 @@
 
 <button on:click={() => (navOpen = !navOpen)}>
 	{#if navOpen}
-			<DownArrow />
-			<dialog in:slide>
-				{#each pages as { name, path }}
-					<a href={path}>{name}</a>
-				{/each}
-			</dialog>
+		<DownArrow />
+		<dialog in:slide>
+			{#each pages as { name, path }}
+				<a href={path} target="_self">{name}</a>
+			{/each}
+		</dialog>
 	{:else}
-			<Hamburger />
+		<Hamburger />
 	{/if}
 </button>
 
@@ -34,8 +34,8 @@
 	button {
 		background: none;
 		border: none;
-        margin-left: auto;
-    }
+		margin-left: auto;
+	}
 
 	dialog {
 		background-color: palegoldenrod;
