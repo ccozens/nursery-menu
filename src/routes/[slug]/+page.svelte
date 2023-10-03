@@ -53,6 +53,12 @@
 		width: 100%;
 	}
 
+	@media (min-width: 768px) {
+		.gridContainer {
+			grid-template-columns: var(--stickyWidth) repeat(5, calc(70vw - var(--stickyWidth)));
+			font-size: 1.2em;
+		}
+	}
 	@media (min-width: 992px) {
 		.gridContainer {
 			grid-template-columns: var(--desktopStickyWidth) repeat(5, 1fr);
