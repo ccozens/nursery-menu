@@ -3,9 +3,7 @@
 	import { addPudding } from '$lib/functions/AddPudding.js';
 	import type {Meal} from '$lib/types';
 
-    export let meals: Meal[] = [];
-	const mealsWithPudding = addPudding(meals);
-	const mealsWithDay = [{ name: 'day', start_time: '', end_time: '' }, ...mealsWithPudding];
+    export let mealsWithDay: Meal[] = [];
 </script>
 
 <!-- html -->
@@ -25,3 +23,14 @@
 		</p>
 	</div>
 {/each}
+
+
+<style lang="postcss">
+    .heading {
+        font-weight: bold;
+        text-transform: capitalize;
+        font-size: 1.6em;
+		border: 3px solid yellow;
+
+    }
+</style>

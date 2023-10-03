@@ -7,6 +7,8 @@
 	const days: string[] = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
 
 	const food = data.food;
+
+	const mealsWithDay = [{ name: 'day', start_time: '', end_time: '' }, ...meals];
 </script>
 
 <!-- <MainGridHeading {mealsWithDay} /> -->
@@ -17,42 +19,50 @@
 {/each} -->
 
 <main>
-	<aside>
-		<MealListWithDay {meals} />
-	</aside>
-	<div id="gallery">
-		{#each days as day}
-			<section class="heading">
-				<div class="day">
-					{day}
-					<Day {day} {food} />
-				</div>
-			</section>
-		{/each}
-	</div>
+	<!-- <MealListWithDay {mealsWithDay} /> -->
+	<div class="fixed">Fixed 1</div>
+	<div class="fixed">Fixed 2</div>
+	<div class="fixed">Fixed 3</div>
+	<div class="fixed">Fixed 4</div>
+	<div class="fixed">Fixed 5</div>
+	<div class="fixed">Fixed 6</div>
+	{#each days as day}
+		<section>
+			<div class="day">
+				{day}
+			</div>
+			<Day {day} {food} />
+		</section>
+	{/each}
 </main>
 
 <style>
+	:root {
+		--stickyWidth: 10vw;
+	}
 	main {
 		display: grid;
-		grid-template-columns: 1fr 3fr;
-	}
-
-	aside {
-		display: grid;
-	}
-	#gallery {
+		grid-template-columns: var(--stickyWidth) 1fr;
+		grid-template-rows: 1fr, repeat(5, 2fr);
+		grid-auto-flow: column;
 		scroll-snap-type: x mandatory;
 		overflow-x: scroll;
-		display: flex;
 	}
 
-	#gallery section {
+	.fixed {
+		position: sticky;
+		left: 10px;
+		width: var(--stickyWidth);
+		z-index: 1;
+	}
+
+	section {
 		scroll-snap-align: center;
 		display: grid;
-
+		grid-template-rows: 1fr, repeat(5, 2fr);
 		& .day {
 			width: 70vw;
+			border: 3px solid red;
 		}
 	}
 

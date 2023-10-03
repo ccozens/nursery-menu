@@ -31,8 +31,8 @@
 		{#each item as food}
 			{#if !food.pudding}
 				<p>{food.food}</p>
+				{:else}
 				<hr />
-			{:else}
 				<p>Pudding: {food.food}</p>
 			{/if}
 		{/each}
@@ -49,6 +49,7 @@
 	}
 
 	.meal {
-		border: 1px solid #e2e8f8;
+		border: 3px solid yellow;
+
 	}
 </style>
