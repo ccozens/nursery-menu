@@ -2,7 +2,7 @@
 <script lang="ts">
 	import '../app.postcss';
 	import { isVegetarian } from '$lib/stores';
-	import { MainGrid, Nav } from '$lib/components';
+	import { Nav } from '$lib/components';
 	import { page } from '$app/stores';
 	const slug = $page.params.slug;
 </script>
@@ -18,17 +18,15 @@
 		<button on:click={() => ($isVegetarian = !$isVegetarian)}
 			>{$isVegetarian ? 'Show Meat' : 'Show Vegetarian'}
 		</button>
-		<!-- <MainGrid> -->
 		<slot />
-		<!-- </MainGrid> -->
 	</main>
 </div>
 
 <style lang="postcss">
 	.wrapper {
 		display: grid;
-		max-height: 100vh;
-		grid-template-rows: var;
+		min-height: 100vh;
+		grid-template-rows: var(--header-height) 1fr;
 		grid-template-areas:
 			'header'
 			'main';
@@ -66,9 +64,4 @@
 		overflow: auto;
 	}
 
-	footer {
-		grid-area: footer;
-		background-color: #ec4d4d;
-		text-align: center;
-	}
 </style>

@@ -29,10 +29,12 @@
 	{/each}
 </div>
 
-<style>
+<style lang="postcss">
 	:root {
 		--stickyWidth: 30vw;
+		--desktopStickyWidth: 10vw;
 	}
+
 	.gridContainer {
 		display: grid;
 		grid-template-columns: var(--stickyWidth) repeat(5, calc(90vw - var(--stickyWidth)));
@@ -40,7 +42,6 @@
 		grid-auto-flow: column;
 		scroll-snap-type: x mandatory;
 		overflow-x: scroll;
-		gap: 0.5em;
 		place-items: center;
 	}
 
@@ -50,5 +51,13 @@
 		text-transform: capitalize;
 		font-size: 1em;
 		width: 100%;
+	}
+
+	@media (min-width: 992px) {
+		.gridContainer {
+			grid-template-columns: var(--desktopStickyWidth) repeat(5, 1fr);
+			font-size: 1.2em;
+			overflow-x: hidden;
+		}
 	}
 </style>

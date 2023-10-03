@@ -31,7 +31,7 @@
 		{#each item as food}
 			{#if !food.pudding}
 				<p>{food.food}</p>
-				{:else}
+			{:else}
 				<hr />
 				<p>Pudding: {food.food}</p>
 			{/if}
@@ -47,5 +47,4 @@
 	p {
 		font-size: 1em;
 	}
-
 </style>

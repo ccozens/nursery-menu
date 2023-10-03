@@ -4,10 +4,15 @@
 
 <style lang="postcss">
 	.mainGrid {
-		display: grid;
-		grid-template-columns: repeat(6, 1fr);
-		grid-template-rows: 2em, repeat(5, 1fr);
-		background-color: #d4dfff;
-		border: #e2e8f8;
+		display: none;
+	}
+	@media (--desktop) {
+		.mainGrid {
+			display: grid;
+			grid-template-columns: repeat(6, 1fr);
+			grid-template-rows: 2em, repeat(5, 1fr);
+			background-color: #d4dfff;
+			border: #e2e8f8;
+		}
 	}
 </style>
