@@ -1,12 +1,9 @@
 <script lang="ts">
 	// imports
-	import { MainGridHeading, Day } from '$lib/components';
-	import { addPudding } from '$lib/functions/AddPudding.js';
+	import { MealListWithDay, Day } from '$lib/components';
 	export let data;
-	
+
 	const meals = data.meals;
-	const mealsWithPudding = addPudding(meals);
-	const mealsWithDay = [{ name: 'day', start_time: '', end_time: '' }, ...mealsWithPudding];
 	const days: string[] = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
 
 	const food = data.food;
@@ -21,21 +18,7 @@
 
 <main>
 	<aside>
-		{#each mealsWithDay as meal}
-			<div class="heading">
-				{meal.name}
-				<p>
-					{#if meal.start_time}
-						{meal.start_time}
-					{/if}
-					{#if meal.end_time}
-						<span>
-							- {meal.end_time}
-						</span>
-					{/if}
-				</p>
-			</div>
-		{/each}
+		<MealListWithDay {meals} />
 	</aside>
 	<div id="gallery">
 		{#each days as day}
