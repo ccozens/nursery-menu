@@ -18,7 +18,7 @@
 	<Day {day} {food} />
 {/each} -->
 
-<main>
+<div class="gridContainer">
 	<MealListWithDay {mealsWithDay} />
 
 	{#each days as day}
@@ -27,25 +27,27 @@
 		</div>
 		<Day {day} {food} />
 	{/each}
-</main>
+</div>
 
 <style>
 	:root {
 		--stickyWidth: 30vw;
 	}
-	main {
+	.gridContainer {
 		display: grid;
 		grid-template-columns: var(--stickyWidth) repeat(5, calc(90vw - var(--stickyWidth)));
-		grid-template-rows: 100px repeat(5, 1fr);
+		grid-template-rows: 1fr repeat(5, 2fr);
 		grid-auto-flow: column;
 		scroll-snap-type: x mandatory;
 		overflow-x: scroll;
+		gap: 0.5em;
+		place-items: center;
 	}
 
 	.day {
 		scroll-snap-align: end;
 		font-weight: bold;
 		text-transform: capitalize;
-		font-size: 1.4em;
+		font-size: 1em;
 	}
 </style>
