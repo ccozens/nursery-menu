@@ -48,8 +48,4 @@
 		font-size: 1.5em;
 	}
 
-	.meal {
-		border: 3px solid yellow;
-
-	}
 </style>

@@ -19,54 +19,33 @@
 {/each} -->
 
 <main>
-	<!-- <MealListWithDay {mealsWithDay} /> -->
-	<div class="fixed">Fixed 1</div>
-	<div class="fixed">Fixed 2</div>
-	<div class="fixed">Fixed 3</div>
-	<div class="fixed">Fixed 4</div>
-	<div class="fixed">Fixed 5</div>
-	<div class="fixed">Fixed 6</div>
+	<MealListWithDay {mealsWithDay} />
+
 	{#each days as day}
-		<section>
-			<div class="day">
-				{day}
-			</div>
-			<Day {day} {food} />
-		</section>
+		<div class="day heading">
+			{day}
+		</div>
+		<Day {day} {food} />
 	{/each}
 </main>
 
 <style>
 	:root {
-		--stickyWidth: 10vw;
+		--stickyWidth: 30vw;
 	}
 	main {
 		display: grid;
-		grid-template-columns: var(--stickyWidth) 1fr;
-		grid-template-rows: 1fr, repeat(5, 2fr);
+		grid-template-columns: var(--stickyWidth) repeat(5, calc(90vw - var(--stickyWidth)));
+		grid-template-rows: 100px repeat(5, 1fr);
 		grid-auto-flow: column;
 		scroll-snap-type: x mandatory;
 		overflow-x: scroll;
 	}
 
-	.fixed {
-		position: sticky;
-		left: 10px;
-		width: var(--stickyWidth);
-		z-index: 1;
-	}
-
-	section {
-		scroll-snap-align: center;
-		display: grid;
-		grid-template-rows: 1fr, repeat(5, 2fr);
-		& .day {
-			width: 70vw;
-			border: 3px solid red;
-		}
-	}
-
-	#gallery section p {
-		height: 100px;
+	.day {
+		scroll-snap-align: end;
+		font-weight: bold;
+		text-transform: capitalize;
+		font-size: 1.4em;
 	}
 </style>
