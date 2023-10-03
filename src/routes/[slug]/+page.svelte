@@ -49,5 +49,6 @@
 		font-weight: bold;
 		text-transform: capitalize;
 		font-size: 1em;
+		width: 100%;
 	}
 </style>
