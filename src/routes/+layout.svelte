@@ -11,7 +11,7 @@
 
 <div class="wrapper">
 	<header>
-		<h1>Nursery menu: week {slug}</h1>
+		<h1>Menu: week {slug}</h1>
 		<Nav />
 	</header>
 	<main>
@@ -19,22 +19,19 @@
 			>{$isVegetarian ? 'Show Meat' : 'Show Vegetarian'}
 		</button>
 		<!-- <MainGrid> -->
-			<slot />
+		<slot />
 		<!-- </MainGrid> -->
 	</main>
-
-
 </div>
 
 <style lang="postcss">
 	.wrapper {
 		display: grid;
 		max-height: 100vh;
-		grid-template-rows: var(--header-height) 6fr 5vh;
+		grid-template-rows: var;
 		grid-template-areas:
 			'header'
-			'main'
-			'footer';
+			'main';
 	}
 
 	header {
@@ -55,6 +52,10 @@
 			-webkit-background-clip: text;
 			-webkit-text-fill-color: transparent;
 			stroke: 1px white;
+			font-size: var(--size-800);
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
 		}
 	}
 
