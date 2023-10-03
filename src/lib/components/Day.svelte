@@ -44,6 +44,10 @@
 		text-transform: capitalize;
 	}
 
+	p {
+		font-size: 1.5em;
+	}
+
 	.meal {
 		border: 1px solid #e2e8f8;
 	}

@@ -18,9 +18,9 @@
 		<button on:click={() => ($isVegetarian = !$isVegetarian)}
 			>{$isVegetarian ? 'Show Meat' : 'Show Vegetarian'}
 		</button>
-		<MainGrid>
+		<!-- <MainGrid> -->
 			<slot />
-		</MainGrid>
+		<!-- </MainGrid> -->
 	</main>
 
 
