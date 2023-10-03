@@ -1,6 +1,5 @@
 <!-- script -->
 <script lang="ts">
-	import { addPudding } from '$lib/functions/AddPudding.js';
 	import type { Meal } from '$lib/types';
 
 	export let mealsWithDay: Meal[] = [];

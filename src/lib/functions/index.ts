@@ -6,4 +6,3 @@ export * from './GetByWeek';
 
 export * from './GetCurrentWeekNumber';
 
-export * from './AddPudding';
