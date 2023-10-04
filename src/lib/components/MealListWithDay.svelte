@@ -33,7 +33,6 @@
 		position: sticky;
 		left: 0px;
 		width: var(--stickyWidth);
-		background: #6b89c4;
 		z-index: 1;
 		height: 100%;
 		width: 100%;
@@ -41,6 +40,7 @@
 		justify-content: center;
 		align-items: center;
         flex-direction: column;
+		box-shadow: 5px 0 5px -5px var(--swatch-1);
 	}
 
 	p {

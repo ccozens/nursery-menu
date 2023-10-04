@@ -37,7 +37,7 @@
 		justify-content: center;
 		align-items: center;
 		grid-area: header;
-		background-color: black;
+		background-color: var(--surface-1);
 		h1 {
 			width: 100%;
 			text-align: center;
@@ -49,7 +49,6 @@
 			);
 			-webkit-background-clip: text;
 			-webkit-text-fill-color: transparent;
-			stroke: 1px white;
 			font-size: var(--size-800);
 			white-space: nowrap;
 			overflow: hidden;
@@ -59,7 +58,7 @@
 
 	main {
 		grid-area: main;
-		background-color: #2459f6;
+		background-color: var(--surface-3);
 		text-align: center;
 		overflow: auto;
 	}

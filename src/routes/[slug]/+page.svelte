@@ -22,7 +22,7 @@
 	<MealListWithDay {mealsWithDay} />
 
 	{#each days as day}
-		<div class="day heading">
+		<div class="day">
 			{day}
 		</div>
 		<Day {day} {food} />
@@ -49,9 +49,11 @@
 		scroll-snap-align: end;
 		font-weight: bold;
 		text-transform: capitalize;
-		font-size: 1em;
+		font-size: 1.2em;
 		width: 100%;
 	}
+
+	
 
 	@media (min-width: 768px) {
 		.gridContainer {
