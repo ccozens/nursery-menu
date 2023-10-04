@@ -10,7 +10,7 @@
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
 		"format": "prettier --plugin-search-dir . --write .",
-		"postinstall": "prisma generate && mv ./node_modules/.pnpm/@prisma+client@5.3.1_prisma@5.3.1/node_modules/.prisma ./node_modules/.pnpm/@prisma+client@5.3.1_prisma@5.3.1/node_modules/_prisma"
+		"postinstall": "prisma generate"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^2.0.0",
