@@ -11,13 +11,6 @@
 	const mealsWithDay = [{ name: 'day', start_time: '', end_time: '' }, ...meals];
 </script>
 
-<!-- <MainGridHeading {mealsWithDay} /> -->
-
-<!-- {#each days as day}
-	<div class="heading">{day}</div>
-	<Day {day} {food} />
-{/each} -->
-
 <div class="gridContainer">
 	<MealListWithDay {mealsWithDay} />
 
@@ -53,7 +46,7 @@
 		width: 100%;
 	}
 
-	
+
 
 	@media (min-width: 768px) {
 		.gridContainer {
