@@ -1,16 +1,8 @@
 <script lang="ts">
-	import { currentWeekNumber } from '$lib/stores';
+	import { pages } from '$lib/stores';
 	import { DownArrow, Hamburger } from '$lib/images';
 	import { slide, fade } from 'svelte/transition';
 
-	const pages = [
-		{ name: 'Current menu', path: `/${$currentWeekNumber}` },
-		{ name: 'Week 1', path: '/1' },
-		{ name: 'Week 2', path: '/2' },
-		{ name: 'Week 3', path: '/3' },
-		{ name: 'Week 4', path: '/4' },
-		{ name: 'About', path: '/about' }
-	];
 
 	$: navOpen = false;
 </script>
@@ -21,7 +13,7 @@
 	{#if navOpen}
 		<DownArrow />
 		<dialog in:slide>
-			{#each pages as { name, path }}
+			{#each $pages as { name, path }}
 				<a href={path} target="_self">{name}</a>
 			{/each}
 		</dialog>
