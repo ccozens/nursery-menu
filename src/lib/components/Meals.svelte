@@ -19,19 +19,30 @@
 		snack2,
 		getMeat(tea, $isVegetarian)
 	];
+
+	function hasPudding(array: Food[]): boolean {
+		return array.some((item) => item.pudding === true);
+	}
 </script>
 
 <!-- html -->
 {#each dayMenu as item}
 	<div class="meal {item === snack1 || item === snack2 ? 'snack' : ''}">
-		{#each item as food}
-			{#if !food.pudding}
+		{#if hasPudding(item)}
+			{#each item as food}
+				<div class="mealWithPudding">
+					{#if !food.pudding}
+						<p class="main">{food.food}</p>
+					{:else}
+						<p class="pudding">Pudding: {food.food}</p>
+					{/if}
+				</div>
+			{/each}
+		{:else}
+			{#each item as food}
 				<p>{food.food}</p>
-			{:else}
-				<hr />
-				<p>Pudding: {food.food}</p>
-			{/if}
-		{/each}
+			{/each}
+		{/if}
 	</div>
 {/each}
 
@@ -43,6 +54,18 @@
 	p {
 		font-size: 1em;
 	}
+
+	.meal {
+		height: 100%;
+	}
+
+	.main {
+		height: 60%;
+	}
+	.pudding {
+		height: 40%;
+	}
+
 
 	.snack {
 		display: flex;
