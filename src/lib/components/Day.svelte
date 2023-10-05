@@ -1,51 +1,26 @@
 <!-- script -->
 <script lang="ts">
-	// imports
+	import { Meals } from '$lib/components';
 	import type { Food } from '$lib/types';
-	import { isVegetarian } from '$lib/stores';
-	import { getMeat } from '$lib/functions';
 
-	// props
-	export let food;
-	export let day: string = '';
-
-	const menu = food.filter((item: Food) => item.day.includes(day));
-	const breakfast = menu.filter((item: Food) => item.meal.includes('Breakfast'));
-	const snack1 = menu.filter((item: Food) => item.meal.includes('Snack1'));
-	const lunch = menu.filter((item: Food) => item.meal.includes('Lunch'));
-	const snack2 = menu.filter((item: Food) => item.meal.includes('Snack2'));
-	const tea = menu.filter((item: Food) => item.meal.includes('Tea'));
-
-	$: dayMenu = [
-		breakfast,
-		snack1,
-		getMeat(lunch, $isVegetarian),
-		snack2,
-		getMeat(tea, $isVegetarian)
-	];
+	export let days: string[] = [];
+	export let food: Food[] = [];
 </script>
 
 <!-- html -->
-{#each dayMenu as item}
-	<div class="meal">
-		{#each item as food}
-			{#if !food.pudding}
-				<p>{food.food}</p>
-			{:else}
-				<hr />
-				<p>Pudding: {food.food}</p>
-			{/if}
-		{/each}
+{#each days as day}
+	<div class="day">
+		{day}
 	</div>
+	<Meals {day} {food} />
 {/each}
 
 <style lang="postcss">
-	p::first-letter {
+	.day {
+		scroll-snap-align: end;
+		font-weight: bold;
 		text-transform: capitalize;
+		font-size: 1.2em;
+		width: 100%;
 	}
-
-	p {
-		font-size: 1em;
-	}
-
 </style>

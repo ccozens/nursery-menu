@@ -1,7 +1,6 @@
 <!-- script -->
 <script lang="ts">
 	import type { Meal } from '$lib/types';
-
 	export let mealsWithDay: Meal[] = [];
 </script>
 
@@ -36,11 +35,8 @@
 		z-index: 1;
 		height: 100%;
 		width: 100%;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-        flex-direction: column;
-		box-shadow: 5px 0 5px -5px var(--swatch-1);
+		flex-direction: column;
+		background-color: var(--surface-2);
 	}
 
 	p {

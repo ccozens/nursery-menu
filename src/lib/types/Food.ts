@@ -1,7 +1,7 @@
 export interface Food {
 	id: bigint;
-	vegetarian: boolean;
-	pudding: boolean;
+	vegetarian: boolean | null;
+	pudding: boolean | null;
 	food: string;
 	day: string[];
 	meal: string[];
