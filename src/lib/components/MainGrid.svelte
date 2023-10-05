@@ -17,16 +17,6 @@
 			justify-content: center;
 			align-items: center;
 		}
-
-		& div:nth-child(6n + 3):not(.heading),
-		& div:nth-child(6n + 5):not(.heading) {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			width: 100%;
-			height: 100%;
-			background-color: var(--overlay);
-		}
 	}
 
 	@media (min-width: 768px) {

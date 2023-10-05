@@ -23,7 +23,7 @@
 
 <!-- html -->
 {#each dayMenu as item}
-	<div class="meal">
+	<div class="meal {item === snack1 || item === snack2 ? 'snack' : ''}">
 		{#each item as food}
 			{#if !food.pudding}
 				<p>{food.food}</p>
@@ -42,5 +42,14 @@
 
 	p {
 		font-size: 1em;
+	}
+
+	.snack {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		height: 100%;
+		background-color: var(--overlay);
 	}
 </style>

@@ -7,7 +7,7 @@
 <!-- html -->
 
 {#each mealsWithDay as meal}
-	<div class="heading fixed">
+	<div class="heading fixed {meal.name === 'snack' ? 'snack' : ''}">
 		<p>{meal.name}</p>
 		<p>
 			{#if meal.start_time}
@@ -37,6 +37,13 @@
 		width: 100%;
 		flex-direction: column;
 		background-color: var(--surface-2);
+	}
+
+	.snack {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: var(--surface-3);
 	}
 
 	p {
