@@ -1,6 +1,5 @@
 <script lang="ts">
 	// imports
-	import { days } from '$lib/data';
 	import { MainGrid, MealListWithDay, Day } from '$lib/components';
 
 	export let data;
@@ -12,5 +11,5 @@
 <MainGrid>
 	<MealListWithDay {mealsWithDay} />
 
-	<Day {days} {food} />
+	<Day {food} />
 </MainGrid>

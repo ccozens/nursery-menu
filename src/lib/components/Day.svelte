@@ -2,8 +2,8 @@
 <script lang="ts">
 	import { Meals } from '$lib/components';
 	import type { Food } from '$lib/types';
+	import { days } from '$lib/data';
 
-	export let days: string[] = [];
 	export let food: Food[] = [];
 </script>
 
