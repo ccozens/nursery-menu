@@ -30,7 +30,7 @@
 	.wrapper {
 		display: grid;
 		min-height: 100vh;
-		grid-template-rows: var(--header-height) 1fr var(--header-height);
+		grid-template-rows: var(--header-height) 1fr calc(var(--header-height)/2);
 		grid-template-areas:
 			'header'
 			'main'
@@ -68,8 +68,11 @@
 		overflow: auto;
 	}
 
-footer {
-	grid-area: footer;
-	background-color: var(--surface-1);
-}
+	footer {
+		grid-area: footer;
+		background-color: var(--surface-1);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
 </style>
