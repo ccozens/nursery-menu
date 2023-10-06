@@ -2,13 +2,14 @@
 <script lang="ts">
 	import '../app.postcss';
 	import { isVegetarian } from '$lib/stores';
-	import { Nav } from '$lib/components';
+	import { Analytics, Nav } from '$lib/components';
 	import { page } from '$app/stores';
 	const slug = $page.params.slug;
 </script>
 
 <!-- html -->
 
+<Analytics />
 <div class="wrapper">
 	<header>
 		<h1>Menu: week {slug}</h1>
