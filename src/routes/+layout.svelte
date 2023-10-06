@@ -2,7 +2,7 @@
 <script lang="ts">
 	import '../app.postcss';
 	import { isVegetarian } from '$lib/stores';
-	import { Analytics, Nav } from '$lib/components';
+	import { Analytics, Nav, Footer } from '$lib/components';
 	import { page } from '$app/stores';
 	const slug = $page.params.slug;
 </script>
@@ -21,16 +21,20 @@
 		</button>
 		<slot />
 	</main>
+	<footer>
+		<Footer />
+	</footer>
 </div>
 
 <style lang="postcss">
 	.wrapper {
 		display: grid;
 		min-height: 100vh;
-		grid-template-rows: var(--header-height) 1fr;
+		grid-template-rows: var(--header-height) 1fr var(--header-height);
 		grid-template-areas:
 			'header'
-			'main';
+			'main'
+			'footer';
 	}
 
 	header {
@@ -64,4 +68,8 @@
 		overflow: auto;
 	}
 
+footer {
+	grid-area: footer;
+	background-color: var(--surface-1);
+}
 </style>
