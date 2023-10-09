@@ -26,6 +26,11 @@
 	.heading {
 		font-weight: bold;
 		text-transform: capitalize;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
 	}
 
 	.fixed {
@@ -33,20 +38,10 @@
 		left: 0px;
 		width: var(--stickyWidth);
 		z-index: 1;
-		height: 100%;
-		width: 100%;
-		flex-direction: column;
 		background-color: var(--surface-2);
 	}
 
 	.snack {
-		display: flex;
-		justify-content: center;
-		align-items: center;
 		background-color: var(--surface-3);
-	}
-
-	p {
-		font-size: 1em;
 	}
 </style>

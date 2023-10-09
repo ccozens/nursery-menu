@@ -27,7 +27,7 @@
 	.wrapper {
 		display: grid;
 		min-height: 100vh;
-		grid-template-rows: var(--header-height) 1fr calc(var(--header-height) / 2);
+		grid-template-rows: var(--header-height) 1fr var(--footer-height);
 		grid-template-areas:
 			'header'
 			'main'
