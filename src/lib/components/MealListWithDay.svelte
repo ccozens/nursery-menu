@@ -36,7 +36,7 @@
 	.fixed {
 		position: sticky;
 		left: 0px;
-		width: var(--stickyWidth);
+		width: 100%;
 		z-index: 1;
 		background-color: var(--surface-2);
 	}

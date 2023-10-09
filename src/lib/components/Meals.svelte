@@ -30,11 +30,11 @@
 	<div class="meal {item === snack1 || item === snack2 ? 'snack' : ''}">
 		{#if hasPudding(item)}
 			{#each item as food}
-				<div class="mealWithPudding">
+				<div class="meal">
 					{#if !food.pudding}
-						<p class="main">{food.food}</p>
+						<p>{food.food}</p>
 					{:else}
-						<p class="pudding">Pudding: {food.food}</p>
+						<p>Pudding: {food.food}</p>
 					{/if}
 				</div>
 			{/each}
@@ -57,22 +57,14 @@
 
 	.meal {
 		height: 100%;
+		padding: 0.2em;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
 	}
-
-	.main {
-		height: 60%;
-	}
-	.pudding {
-		height: 40%;
-	}
-
 
 	.snack {
-		display: flex;
-		justify-content: center;
-		align-items: center;
 		width: 100%;
-		height: 100%;
 		background-color: var(--overlay);
 	}
 </style>
