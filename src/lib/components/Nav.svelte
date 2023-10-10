@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { pages } from '$lib/stores';
 	import { DownArrow, Hamburger } from '$lib/images';
-	import { slide, fade } from 'svelte/transition';
+	import { slide } from 'svelte/transition';
 
 
 	$: navOpen = false;
@@ -72,7 +72,7 @@
 	}
 
 	dialog::backdrop {
-		background-color: oklch(0% 0 0 / 0.5);
+		background-color: oklch(1% 0 0 / 0.5);
 	}
 
 	@media (min-width: 992px) {
