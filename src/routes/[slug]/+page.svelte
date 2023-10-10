@@ -1,7 +1,6 @@
 <script lang="ts">
 	// imports
 	import { MainGrid, MealListWithDay, Day } from '$lib/components';
-
 	export let data;
 	const { meals, food } = data;
 

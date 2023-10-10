@@ -37,7 +37,7 @@
 	header {
 		display: flex;
 		justify-content: center;
-		align-items:center;
+		align-items: center;
 		grid-area: header;
 		background-color: var(--surface-1);
 	}
@@ -56,4 +56,5 @@
 		justify-content: center;
 		align-items: center;
 	}
+
 </style>

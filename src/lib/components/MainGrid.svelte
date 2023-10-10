@@ -14,7 +14,6 @@
 		place-items: center;
 		font-size: 1.2em;
 
-
 		& * {
 			display: flex;
 			justify-content: center;
