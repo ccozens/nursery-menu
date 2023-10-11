@@ -6,16 +6,17 @@
 
 	$: currentWeekString = String($currentWeekNumber);
 	$: pathname = $page.url.pathname;
-	$: slug = pathname.slice(1);
+	$: pathnameSlice = pathname.slice(1);
+	const isItDigit = (str: string) => /^\d+$/.test(str);
 </script>
 
 <!-- html -->
 {#if pathname === currentWeekString}
-	<h1>Current menu <span>{slug})</span></h1>
-{:else if pathname === '/about'}
-	<h1>{pathname.slice(1)}</h1>
+	<h1>Current menu <span>{pathnameSlice})</span></h1>
+{:else if !isItDigit(pathnameSlice)}
+	<h1>{pathnameSlice}</h1>
 {:else}
-	<h1>Menu: week {slug}</h1>
+	<h1>Menu: week {pathnameSlice}</h1>
 {/if}
 
 <Nav />
