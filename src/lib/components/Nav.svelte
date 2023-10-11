@@ -3,7 +3,6 @@
 	import { DownArrow, Hamburger } from '$lib/images';
 	import { slide } from 'svelte/transition';
 
-
 	$: navOpen = false;
 </script>
 
