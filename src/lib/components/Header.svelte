@@ -4,12 +4,16 @@
 	import { page } from '$app/stores';
 	import { Nav } from '$lib/components';
 
-	$: slug = Number($page.params.slug);
+	$: currentWeekString = String($currentWeekNumber);
+	$: pathname = $page.url.pathname;
+	$: slug = pathname.slice(1);
 </script>
 
 <!-- html -->
-{#if slug === $currentWeekNumber}
+{#if pathname === currentWeekString}
 	<h1>Current menu <span>{slug})</span></h1>
+{:else if pathname === '/about'}
+	<h1>{pathname.slice(1)}</h1>
 {:else}
 	<h1>Menu: week {slug}</h1>
 {/if}
@@ -31,10 +35,10 @@
 		font-size: var(--size-800);
 		overflow: hidden;
 		text-overflow: ellipsis;
-
-        span::before {
-            content: '(';
-        }
+		text-transform: capitalize;
+		span::before {
+			content: '(';
+		}
 		@media (min-width: 992px) {
 			span::before {
 				content: '(week ';
