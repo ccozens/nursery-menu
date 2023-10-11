@@ -18,9 +18,3 @@ Note I only set up read from supabase and all data entry was via prisma studio, 
 
 ### Transitions
 I set up transitions for the nav dropdown using [svelte/transition](https://svelte.dev/docs/svelte-transition), and for the menu icon using CSS transitions. Initially I tried using svelte transitions for both but this resulted in jerky behaviour, I think because of how svelte processes two simultaneous transitions.
-
-## Code
-The code is all open, apart from the database access keys, [at GitHub](https://github.com/ccozens/nursery-menu).
-
-## Contact
-If you have any questions, comments or requests, please get in touch via email: <officechrisgarden@gmail.com>.
