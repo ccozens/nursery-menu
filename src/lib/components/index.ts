@@ -8,3 +8,4 @@ export { default as Footer } from './Footer.svelte';
 export { default as Header } from './Header.svelte';
 export { default as Card } from './Card.svelte';
 export { default as Subcard } from './Subcard.svelte';
+export { default as VegetarianToggle } from './VegetarianToggle.svelte';

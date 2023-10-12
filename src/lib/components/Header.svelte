@@ -2,7 +2,7 @@
 <script lang="ts">
 	import { currentWeekNumber } from '$lib/stores';
 	import { page } from '$app/stores';
-	import { Nav } from '$lib/components';
+	import { Nav, VegetarianToggle } from '$lib/components';
 
 	$: currentWeekString = String($currentWeekNumber);
 	$: pathname = $page.url.pathname;
@@ -19,6 +19,7 @@
 	<h1>Menu: week {pathnameSlice}</h1>
 {/if}
 
+<VegetarianToggle />
 <Nav />
 
 <style lang="postcss">

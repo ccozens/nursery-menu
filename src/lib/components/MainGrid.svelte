@@ -5,14 +5,14 @@
 <style lang="postcss">
 	.mainGrid {
 		display: grid;
-		height: var(--main-height);
+		height: 100%;
 		grid-template-columns: var(--stickyWidth) repeat(5, calc(90vw - var(--stickyWidth)));
-		grid-template-rows: 1fr 2fr 1fr 2fr 1fr 2fr;
+		grid-template-rows: 1fr 3fr 2fr 3fr 2fr 3fr;
 		grid-auto-flow: column;
 		scroll-snap-type: x mandatory;
 		overflow-x: scroll;
 		place-items: center;
-		font-size: 1.2em;
+		font-size: var(--size-500);
 
 		& * {
 			display: flex;
@@ -29,7 +29,6 @@
 	@media (min-width: 992px) {
 		.mainGrid {
 			grid-template-columns: var(--desktopStickyWidth) repeat(5, 1fr);
-			font-size: 1.2em;
 		}
 	}
 </style>

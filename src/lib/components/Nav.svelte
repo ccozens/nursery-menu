@@ -24,8 +24,10 @@
 <style>
 	button {
 		background: none;
-		border: none;
+		border-radius: 0.5rem;
+		height: var(--size-700);
 		margin-left: auto;
+		color: var(--text-1);
 	}
 
 	dialog {

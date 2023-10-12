@@ -1,7 +1,6 @@
 <!-- script -->
 <script lang="ts">
 	import '../app.postcss';
-	import { isVegetarian } from '$lib/stores';
 	import { Analytics, Footer, Header } from '$lib/components';
 </script>
 
@@ -12,9 +11,6 @@
 	<Header />
 </header>
 <main>
-	<button on:click={() => ($isVegetarian = !$isVegetarian)}
-		>{$isVegetarian ? 'Show Meat' : 'Show Vegetarian'}
-	</button>
 	<slot />
 </main>
 <footer>
