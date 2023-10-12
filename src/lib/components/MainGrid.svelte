@@ -29,6 +29,7 @@
 	@media (min-width: 992px) {
 		.mainGrid {
 			grid-template-columns: var(--desktopStickyWidth) repeat(5, 1fr);
+			overflow-x: hidden;
 		}
 	}
 </style>
