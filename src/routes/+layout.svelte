@@ -8,32 +8,20 @@
 <!-- html -->
 
 <Analytics />
-<div class="wrapper">
-	<header>
-		<Header />
-	</header>
-	<main>
-		<button on:click={() => ($isVegetarian = !$isVegetarian)}
-			>{$isVegetarian ? 'Show Meat' : 'Show Vegetarian'}
-		</button>
-		<slot />
-	</main>
-	<footer>
-		<Footer />
-	</footer>
-</div>
+<header>
+	<Header />
+</header>
+<main>
+	<button on:click={() => ($isVegetarian = !$isVegetarian)}
+		>{$isVegetarian ? 'Show Meat' : 'Show Vegetarian'}
+	</button>
+	<slot />
+</main>
+<footer>
+	<Footer />
+</footer>
 
 <style lang="postcss">
-	.wrapper {
-		display: grid;
-		min-height: 100vh;
-		grid-template-rows: var(--header-height) 1fr var(--footer-height);
-		grid-template-areas:
-			'header'
-			'main'
-			'footer';
-	}
-
 	header {
 		display: flex;
 		justify-content: center;
@@ -46,15 +34,14 @@
 		grid-area: main;
 		background-color: var(--surface-3);
 		text-align: center;
-		overflow: auto;
 	}
 
 	footer {
 		grid-area: footer;
 		background-color: var(--surface-1);
+		padding: 1rem;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 	}
-
 </style>

@@ -4,9 +4,6 @@
 /* font sizes from https://css-tricks.com/consistent-fluidly-scaling-type-and-spacing/ */
 :root {
 	/* element sizes */
-	--header-height: 10vh;
-	--footer-height: calc(var(--header-height) / 2);
-	--main-height: calc(100vh - var(--header-height) - var(--footer-height));
 	--nav-width: 70vw;
 	--stickyWidth: 30vw;
 	--desktopStickyWidth: 10vw;
@@ -52,13 +49,14 @@ a {
 	text-decoration: none;
 	border-bottom: 1px solid var(--yellow-3);
 	color: inherit;
-	transition: background 0.2s cubic-bezier(.33,.66,.66,1), color 0.2s cubic-bezier(.33,.66,.66,1);
-  }
+	transition: background 0.2s cubic-bezier(0.33, 0.66, 0.66, 1),
+		color 0.2s cubic-bezier(0.33, 0.66, 0.66, 1);
+}
 
-  a:hover {
+a:hover {
 	background: var(--yellow-3);
 	color: var(--surface-2);
-  }
+}
 
 /* https://www.joshwcomeau.com/css/custom-css-reset/  */
 
@@ -85,6 +83,13 @@ body {
 	line-height: 1.5;
 	-webkit-font-smoothing: antialiased;
 	color: var(--text-1);
+	display: grid;
+	min-height: 100vh;
+	grid-template-rows: auto 1fr auto;
+	grid-template-areas:
+		'header'
+		'main'
+		'footer';
 }
 /*
     5. Improve media defaults
