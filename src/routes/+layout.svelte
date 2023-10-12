@@ -34,6 +34,7 @@
 		grid-area: main;
 		background-color: var(--surface-3);
 		text-align: center;
+		overflow: auto;
 	}
 
 	footer {
