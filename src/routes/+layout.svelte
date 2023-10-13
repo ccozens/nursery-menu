@@ -22,6 +22,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+
 		grid-area: header;
 		background-color: var(--surface-1);
 	}

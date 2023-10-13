@@ -11,7 +11,7 @@
 </script>
 
 <!-- html -->
-{#if pathname === currentWeekString}
+{#if pathnameSlice === currentWeekString}
 	<h1>Current menu <span>{pathnameSlice})</span></h1>
 {:else if !isItDigit(pathnameSlice)}
 	<h1>{pathnameSlice}</h1>
