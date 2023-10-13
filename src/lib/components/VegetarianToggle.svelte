@@ -11,7 +11,7 @@
 		cursor: pointer;
 		background-color: var(--surface-1);
 		width: 33%;
-		height: var(--size-700);
+		height: var(--size-800);
 		border-radius: 0.5rem;
 		font-size: var(--size-500);
 		color: var(--text-1);

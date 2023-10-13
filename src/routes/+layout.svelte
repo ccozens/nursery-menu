@@ -22,7 +22,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-
+		padding: 1em 0;
 		grid-area: header;
 		background-color: var(--surface-1);
 	}

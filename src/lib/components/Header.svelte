@@ -11,6 +11,7 @@
 </script>
 
 <!-- html -->
+<!-- display current menu if current week showing, link name as header if not a digit, or menu: week bla if not current week showing -->
 {#if pathnameSlice === currentWeekString}
 	<h1>Current menu <span>{pathnameSlice})</span></h1>
 {:else if !isItDigit(pathnameSlice)}
@@ -34,7 +35,7 @@
 		);
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
-		font-size: var(--size-800);
+		font-size: var(--size-700);
 		overflow: hidden;
 		text-overflow: ellipsis;
 		text-transform: capitalize;
